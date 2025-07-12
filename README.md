@@ -39,3 +39,16 @@ streamlit run app.py
 ## 📚 Dataset
 
 Source: [kaggle/ankurzing](https://www.kaggle.com/datasets/ankurzing/sentiment-analysis-for-financial-news)
+
+---
+
+## 📊 App Demo
+
+👉 [Try the interactive Streamlit app here](https:///)
+
+<div align="center">
+    <img src="./screenshots/screenshot-4.png" width="250" style="border:1px solid #ccc; margin: 10px;" />
+    <img src="./screenshots/screenshot-3.png" width="250" style="border:1px solid #ccc; margin: 10px;" />
+    <img src="./screenshots/screenshot-2.png" width="250" style="border:1px solid #ccc; margin: 10px;" />
+     <img src="./screenshots/screenshot-4.png" width="250" style="border:1px solid #ccc; margin: 10px;" />
+</div>
