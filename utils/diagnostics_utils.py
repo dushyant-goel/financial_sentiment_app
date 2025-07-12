@@ -5,14 +5,14 @@ import streamlit as st
 def identify_noise_words(model, vectorizer, X, y, threshold_entropy=0.95, threshold_docfreq=0.7, debug=False):
     
     feature_names = vectorizer.get_feature_names_out()
-    print(feature_names)
+    # print(feature_names)
     num_classes = model.class_count_.shape[0]  # 3
     class_log_probs = model.feature_log_prob_  # shape: (n_classes, n_features)
 
     # Convert to probabilities
     class_probs = np.exp(class_log_probs)
     log_var = np.var(class_log_probs, axis=0)
-    print(class_log_probs, log_var)
+    # print(class_log_probs, log_var)
 
     # Document frequency (fraction of docs with word)
     doc_freqs = np.array((X > 0).sum(axis=0)).flatten() / X.shape[0]

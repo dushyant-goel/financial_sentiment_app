@@ -2,6 +2,7 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 import streamlit as st
 import pandas as pd
+import nltk
 
 from utils.model_utils import (
     load_data, preprocess_text, vectorize,
@@ -73,6 +74,11 @@ The goal is to classify unseen financial news into one of these categories based
 The dataset contains **rows of short news headlines**, which are typically more ambiguous and compact in language than product reviews or articles, 
 making the classification noisy. While some headlines are clearly positive or negative, there is always subjectivity involved in labeled data.
 """)
+
+# NLTK download check
+nltk.download('punkt')
+nltk.download('stopwords')
+nltk.download('wordnet')
 
 data = load_data("data/financial-news.csv")
 st.write(data.head(5))
