@@ -19,7 +19,7 @@ Learn how text is converted to features using **Bag-of-Words** and **TF-IDF**, t
 
 ## 🚀 Try It Online
 
-👉 [Launch the app on Streamlit Cloud](https://share.streamlit.io/your-username/sentiment-finance-app/main/app.py)
+👉 [Launch the app on Streamlit Cloud](https://financial-sentiment-app-6sm9n.streamlit.app/)
 
 ---
 
@@ -44,7 +44,7 @@ Source: [kaggle/ankurzing](https://www.kaggle.com/datasets/ankurzing/sentiment-a
 
 ## 📊 App Demo
 
-👉 [Try the interactive Streamlit app here](https:///)
+👉 [Try the interactive Streamlit app here](https://financial-sentiment-app-6sm9n.streamlit.app/)
 
 <div align="center">
     <img src="./screenshots/screenshot-1.png" width="250" style="border:1px solid #ccc; margin: 10px;" />
