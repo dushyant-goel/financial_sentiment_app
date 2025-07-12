@@ -10,7 +10,6 @@ from nltk.stem import WordNetLemmatizer
 
 
 from utils.model_utils import (
-    setup_nltk,
     load_data, preprocess_text, vectorize,
     train_and_evaluate, get_top_n_words_per_class,
 )
