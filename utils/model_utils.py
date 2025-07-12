@@ -16,11 +16,11 @@ nltk.download('punkt')
 nltk.download('stopwords')
 nltk.download('wordnet')
 
-# Preprocessing
-stop_words = set(stopwords.words('english'))
-lemmatizer = WordNetLemmatizer()
 
+# Preprocessing
 def preprocess_text(text):
+    stop_words = set(stopwords.words('english'))
+    lemmatizer = WordNetLemmatizer()
     tokens = word_tokenize(text.lower())
     filtered = [lemmatizer.lemmatize(w) for w in tokens if w.isalnum() and w not in stop_words]
     return ' '.join(filtered)

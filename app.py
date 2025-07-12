@@ -34,6 +34,7 @@ def setup_nltk():
         except LookupError:
             nltk.download(resource)
 
+
 # Set page config
 st.set_page_config(
     page_title="Financial News Sentiment Analyzer",
