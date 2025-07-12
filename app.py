@@ -32,8 +32,7 @@ def setup_nltk():
     ]:
         try:
             nltk.data.find(path)
-            data = load_data()
-
+            data = load_data("data/financial-news.csv")
         except LookupError:
             nltk.download(resource)
 
