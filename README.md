@@ -33,7 +33,7 @@ pip install -r requirements.txt
 
 # Start the app
 streamlit run app.py
-
+```
 ---
 
 ## 📚 Dataset
@@ -47,7 +47,7 @@ Source: [kaggle/ankurzing](https://www.kaggle.com/datasets/ankurzing/sentiment-a
 👉 [Try the interactive Streamlit app here](https:///)
 
 <div align="center">
-    <img src="./screenshots/screenshot-4.png" width="250" style="border:1px solid #ccc; margin: 10px;" />
+    <img src="./screenshots/screenshot-1.png" width="250" style="border:1px solid #ccc; margin: 10px;" />
     <img src="./screenshots/screenshot-3.png" width="250" style="border:1px solid #ccc; margin: 10px;" />
     <img src="./screenshots/screenshot-2.png" width="250" style="border:1px solid #ccc; margin: 10px;" />
      <img src="./screenshots/screenshot-4.png" width="250" style="border:1px solid #ccc; margin: 10px;" />
