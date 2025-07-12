@@ -3,6 +3,6 @@ seaborn
 matplotlib
 pandas
 numpy
-nltk
+nltk==3.9.1
 imblearn>=0.12.4
 scikit-learn>=1.6.0
