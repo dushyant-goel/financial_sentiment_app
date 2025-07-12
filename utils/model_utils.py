@@ -15,6 +15,7 @@ from imblearn.over_sampling import SMOTE
 nltk.download('punkt')
 nltk.download('stopwords')
 nltk.download('wordnet')
+nltk.download('punkt_tab')
 
 # Preprocessing
 stop_words = set(stopwords.words('english'))
