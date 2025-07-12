@@ -16,7 +16,7 @@ from utils.model_utils import (
 from utils.visual_utils import plot_confusion_matrix
 from utils.diagnostics_utils import identify_noise_words
 
-
+data = []
 @st.cache_resource
 def setup_nltk():
     # NLTK download check
@@ -32,8 +32,12 @@ def setup_nltk():
     ]:
         try:
             nltk.data.find(path)
+            data = load_data()
+
         except LookupError:
             nltk.download(resource)
+
+setup_nltk()
 
 # Set page config
 st.set_page_config(
