@@ -8,11 +8,6 @@ from nltk.tokenize import word_tokenize
 from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
 
-# NLTK download check
-nltk.download('punkt', force=True)
-nltk.download('stopwords')
-nltk.download('wordnet')
-
 from utils.model_utils import (
     load_data, preprocess_text, vectorize,
     train_and_evaluate, get_top_n_words_per_class
