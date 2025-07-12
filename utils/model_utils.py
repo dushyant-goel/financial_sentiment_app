@@ -12,7 +12,7 @@ from sklearn.metrics import classification_report, confusion_matrix
 from imblearn.over_sampling import SMOTE
 
 # NLTK download check
-nltk.download('punkt')
+nltk.download('punkt', force=True)
 nltk.download('stopwords')
 nltk.download('wordnet')
 
