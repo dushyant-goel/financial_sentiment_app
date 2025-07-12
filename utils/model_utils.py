@@ -11,34 +11,19 @@ from sklearn.naive_bayes import MultinomialNB
 from sklearn.metrics import classification_report, confusion_matrix
 from imblearn.over_sampling import SMOTE
 
+# NLTK download check
+nltk.download('punkt')
+nltk.download('stopwords')
+nltk.download('wordnet')
 
-def setup_nltk():
-    # NLTK download check
-    nltk.download('punkt')
-    nltk.download('stopwords')
-    nltk.download('wordnet')
-    nltk.download('punkt_tab')
-
-    # Preprocessing
-    stop_words = set(stopwords.words('english'))
-    lemmatizer = WordNetLemmatizer()
-    for resource, path in [
-        ("punkt", "tokenizers/punkt"),
-        ("stopwords", "corpora/stopwords"),
-        ("wordnet", "corpora/wordnet")
-    ]:
-        try:
-            nltk.data.find(path)
-        except LookupError:
-            nltk.download(resource)
-
+# Preprocessing
+stop_words = set(stopwords.words('english'))
+lemmatizer = WordNetLemmatizer()
 
 def preprocess_text(text):
     tokens = word_tokenize(text.lower())
-    filtered = [lemmatizer.lemmatize(
-        w) for w in tokens if w.isalnum() and w not in stop_words]
+    filtered = [lemmatizer.lemmatize(w) for w in tokens if w.isalnum() and w not in stop_words]
     return ' '.join(filtered)
-
 
 def load_data(path):
     df = pd.read_csv(path, encoding='ISO-8859-1', names=['label', 'text'])
@@ -46,7 +31,6 @@ def load_data(path):
     df['label'] = df['label'].map(label_map)
     df['processed'] = df['text'].apply(preprocess_text)
     return df
-
 
 def vectorize(corpus, method='bow', stop_words=None):
     if method == 'bow':
@@ -56,16 +40,13 @@ def vectorize(corpus, method='bow', stop_words=None):
     X = vectorizer.fit_transform(corpus)
     return X, vectorizer
 
-
 def apply_smote(X, y):
     sm = SMOTE(random_state=42)
     X_res, y_res = sm.fit_resample(X, y)
     return X_res, y_res
 
-
 def train_and_evaluate(X, y, apply_sampling=False):
-    X_train, X_test, y_train, y_test = train_test_split(
-        X, y, test_size=0.2, random_state=42)
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
     if apply_sampling:
         X_train, y_train = apply_smote(X_train, y_train)
 
@@ -77,14 +58,12 @@ def train_and_evaluate(X, y, apply_sampling=False):
     matrix = confusion_matrix(y_test, y_pred)
     return model, report, matrix
 
-
 def get_top_n_words_per_class(classifier, vectorizer, class_labels, top_n=10):
     feature_names = vectorizer.get_feature_names_out()
     log_probs = classifier.feature_log_prob_
-
+    
     top_words = {}
     for i, class_label in enumerate(class_labels):
         top_indices = np.argsort(log_probs[i])[::-1][:top_n]
-        top_words[class_label] = [
-            (feature_names[j], np.exp(log_probs[i][j])) for j in top_indices]
+        top_words[class_label] = [(feature_names[j], np.exp(log_probs[i][j])) for j in top_indices]
     return top_words

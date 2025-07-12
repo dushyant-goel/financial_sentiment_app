@@ -19,7 +19,21 @@ from utils.diagnostics_utils import identify_noise_words
 
 
 @st.cache_resource
-setup_nltk()
+def setup_nltk():
+    # NLTK download check
+    nltk.download('punkt')
+    nltk.download('stopwords')
+    nltk.download('wordnet')
+
+    for resource, path in [
+        ("punkt", "tokenizers/punkt"),
+        ("stopwords", "corpora/stopwords"),
+        ("wordnet", "corpora/wordnet")
+    ]:
+        try:
+            nltk.data.find(path)
+        except LookupError:
+            nltk.download(resource)
 
 # Set page config
 st.set_page_config(
