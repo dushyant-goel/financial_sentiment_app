@@ -39,9 +39,9 @@ def setup_nltk():
 setup_nltk()
 
 # Set page config
-st.set_page_config(
-    page_title="Financial News Sentiment Analyzer",
-)
+# st.set_page_config(
+#     page_title="Financial News Sentiment Analyzer",
+# )
 
 # --- Start of Page ---
 st.title("Sentiment Analysis of Financial News")
