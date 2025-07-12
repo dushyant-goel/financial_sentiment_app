@@ -23,6 +23,7 @@ def setup_nltk():
     nltk.download('punkt')
     nltk.download('stopwords')
     nltk.download('wordnet')
+    nltk.download('punkt_tab')
 
     for resource, path in [
         ("punkt", "tokenizers/punkt"),
@@ -33,7 +34,6 @@ def setup_nltk():
             nltk.data.find(path)
         except LookupError:
             nltk.download(resource)
-
 
 # Set page config
 st.set_page_config(
