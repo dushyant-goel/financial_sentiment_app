@@ -4,5 +4,5 @@ matplotlib
 pandas
 numpy
 nltk
-imblearn
-scikit-learn
+imblearn>=0.12.4
+scikit-learn>=1.6.0
