@@ -47,8 +47,10 @@ Source: [kaggle/ankurzing](https://www.kaggle.com/datasets/ankurzing/sentiment-a
 👉 [Try the interactive Streamlit app here](https://financial-sentiment-app-6sm9n.streamlit.app/)
 
 <div align="center">
-    <img src="./screenshots/screenshot-1.png" width="250" style="border:1px solid #ccc; margin: 10px;" />
-    <img src="./screenshots/screenshot-3.png" width="250" style="border:1px solid #ccc; margin: 10px;" />
-    <img src="./screenshots/screenshot-2.png" width="250" style="border:1px solid #ccc; margin: 10px;" />
-     <img src="./screenshots/screenshot-4.png" width="250" style="border:1px solid #ccc; margin: 10px;" />
+    <ul>
+    <li></li><img src="./screenshots/screenshot-1.png" width="250" style="border:5px solid #ccc; margin: 10px;" /></li>
+    <img src="./screenshots/screenshot-3.png" width="250" style="border:5px solid #ccc; margin: 10px;" />
+    <li></li><img src="./screenshots/screenshot-2.png" width="250" style="border:5px solid #ccc; margin: 10px;" /></li>
+    <img src="./screenshots/screenshot-4.png" width="250" style="border:5px solid #ccc; margin: 10px;" />
+    </ul>
 </div>
