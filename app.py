@@ -355,8 +355,8 @@ This motivates us use entropy and class variance metrics to flag such **statisti
 Let's make an effort to clean our corpus from these.
 
 We define,  
-    $ Normalized Entropy(w) = - \frac{\sum_{c} P(c \mid w) logP(c \mid w)}{log(\#classes)} $
-    $ Document Frequency(w) = \frac{\#docs with w}{total docs}$
+    $ \text{Normalized Entropy}(w) = - \frac{\sum_{c} P(c \mid w) logP(c \mid w)}{log(\#\text{classes})} $    
+    $ \text{Document Frequency}(w) = \frac{\#\text{docs with w}}{\text{total docs}}$
 
 - For 'mn' and 'eur' the entropies are 0.777 and 0.914. This indicates that 'eur' appears in evenly across classes 
 and is statistically insignificant. 'mn' less so but is distributed fairly evenly.
@@ -455,6 +455,6 @@ if user_text:
 # --- Footer ---
 st.markdown("---")
 st.markdown("""
-            Built by Dushyant Goel • [Github](https://github.com/dushyant-goel) • [LinkedIn](https://www.linkedin.com/in/dusdusdushyant-goel-fintech/)
-            MSc Data Science (Financial Technology), University of Bristol🎓
+            Built by Dushyant Goel • [Github](https://github.com/dushyant-goel) • [LinkedIn](https://www.linkedin.com/in/dusdusdushyant-goel-fintech/)   
+            🎓 MSc Data Science (Financial Technology), University of Bristol 
             """)
