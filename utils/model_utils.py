@@ -1,6 +1,8 @@
+import streamlit as st
+
 import pandas as pd
 import numpy as np
-import nltk
+
 from nltk.tokenize import word_tokenize
 from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
@@ -11,12 +13,6 @@ from sklearn.naive_bayes import MultinomialNB
 from sklearn.metrics import classification_report, confusion_matrix
 from imblearn.over_sampling import SMOTE
 
-# NLTK download check
-nltk.download('punkt')
-nltk.download('stopwords')
-nltk.download('wordnet')
-
-
 # Preprocessing
 def preprocess_text(text):
     stop_words = set(stopwords.words('english'))
@@ -25,6 +21,7 @@ def preprocess_text(text):
     filtered = [lemmatizer.lemmatize(w) for w in tokens if w.isalnum() and w not in stop_words]
     return ' '.join(filtered)
 
+@st.cache_data
 def load_data(path):
     df = pd.read_csv(path, encoding='ISO-8859-1', names=['label', 'text'])
     label_map = {'negative': 0, 'positive': 1, 'neutral': 2}
