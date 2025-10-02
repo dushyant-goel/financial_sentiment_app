@@ -9,6 +9,7 @@ nltk.download('stopwords')
 nltk.download('wordnet')
 
 nltk_dir = os.path.expanduser('~/nltk_data/tokenizers')
+st.write(os.listdir(nltk_dir))
 exists = os.path.isdir(nltk_dir)
 st.write(f"{nltk_dir} {exists}")
 
