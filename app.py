@@ -1,4 +1,5 @@
 import streamlit as st
+import os
 import nltk
 
 # Setup NLTK corpus
@@ -6,6 +7,10 @@ import nltk
 nltk.download('punkt')
 nltk.download('stopwords')
 nltk.download('wordnet')
+
+nltk_dir = os.path.expanduser('~/nltk_data')
+exists = os.path.isdir(nltk_dir)
+st.write(f"{nltk_dir} {exists}")
 
 # Define the pages
 main_page = st.Page('pages/main_page.py', title="Main Page")
