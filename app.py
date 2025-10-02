@@ -8,7 +8,7 @@ nltk.download('punkt')
 nltk.download('stopwords')
 nltk.download('wordnet')
 
-nltk_dir = os.path.expanduser('~/nltk_data')
+nltk_dir = os.path.expanduser('~/nltk_data/tokenizers/punkt_tab')
 exists = os.path.isdir(nltk_dir)
 st.write(f"{nltk_dir} {exists}")
 
