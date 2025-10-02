@@ -9,10 +9,11 @@ nltk.download('punkt_tab')
 nltk.download('stopwords')
 nltk.download('wordnet')
 
-nltk_dir = os.path.expanduser('~/nltk_data/tokenizers')
-st.write(os.listdir(nltk_dir))
-exists = os.path.isdir(nltk_dir)
-st.write(f"{nltk_dir} {exists}")
+# Debugging punkt_tab issue
+# nltk_dir = os.path.expanduser('~/nltk_data/tokenizers')
+# st.write(os.listdir(nltk_dir))
+# exists = os.path.isdir(nltk_dir)
+# st.write(f"{nltk_dir} {exists}")
 
 # Define the pages
 main_page = st.Page('pages/main_page.py', title="Main Page")
