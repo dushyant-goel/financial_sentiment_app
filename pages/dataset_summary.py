@@ -1,5 +1,5 @@
 import streamlit as st
-from utils.model_utils import load_data
+import pandas as pd
 
 # --- Load and preprocess dataset ---
 st.header("📊 Dataset Summary")
@@ -17,8 +17,7 @@ The dataset contains **rows of short news headlines**, which are typically more 
 making the classification noisy. While some headlines are clearly positive or negative, there is always subjectivity involved in labeled data.
 """)
 
-data = load_data("data/financial-news.csv")
+path = "data/financial-news.csv"
+data = pd.read_csv(path, encoding='ISO-8859-1', names=['label', 'text'])
 st.write(data.head(5))
 st.write(f"Dataset contains {data.shape[0]} samples.")
-
-"---"

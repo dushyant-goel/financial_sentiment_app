@@ -13,7 +13,7 @@ from sklearn.naive_bayes import MultinomialNB
 from sklearn.metrics import classification_report, confusion_matrix
 from imblearn.over_sampling import SMOTE
 
-# Preprocessing
+# Preprocessing using NLTK
 def preprocess_text(text):
     stop_words = set(stopwords.words('english'))
     lemmatizer = WordNetLemmatizer()
@@ -64,3 +64,15 @@ def get_top_n_words_per_class(classifier, vectorizer, class_labels, top_n=10):
         top_indices = np.argsort(log_probs[i])[::-1][:top_n]
         top_words[class_label] = [(feature_names[j], np.exp(log_probs[i][j])) for j in top_indices]
     return top_words
+
+def get_topn_words(vectorizer, doc_vec, topn=5):
+    feature_names = vectorizer.get_feature_names_out()
+
+    words_scores = doc_vec.toarray().flatten()
+    top_indices = np.argsort(words_scores)[::-1][:topn]
+
+    # Filter out zeros
+    top_indices = [i for i in top_indices if words_scores[i] > 0]
+    top_words = [(feature_names[i], words_scores[i]) for i in top_indices]
+
+    return pd.DataFrame(top_words, columns=['word', 'frequency score'])

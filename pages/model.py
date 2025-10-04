@@ -30,23 +30,19 @@ st.markdown("""
 Before we train the model, choose your desired settings:
 """)
 
-col1, col2 = st.columns(2)
+vectorizer_type = st.radio(
+    "Vectorization Method:",
+    ["Bag of Words", "TF-IDF"],
+    index=0,
+    key="vectorizer_choice"
+)
 
-with col1:
-    vectorizer_type = st.sidebar.radio(
-        "Vectorization Method:",
-        ["Bag of Words", "TF-IDF"],
-        index=0,
-        key="vectorizer_choice"
-    )
-
-with col2:
-    use_smote = st.sidebar.radio(
-        "Apply SMOTE for Class Balancing?",
-        ["No", "Yes"],
-        index=0,
-        key="smote_choice"
-    ) == "Yes"
+use_smote = st.sidebar.radio(
+    "Apply SMOTE for Class Balancing?",
+    ["No", "Yes"],
+    index=0,
+    key="smote_choice"
+) == "Yes"
 
 "---"
 

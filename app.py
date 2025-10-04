@@ -19,7 +19,7 @@ nltk.download('wordnet')
 main_page = st.Page('pages/main_page.py', title="Main Page")
 dataset_summary_page = st.Page('pages/dataset_summary.py', title="Dataset Summary")
 theory_naive_bayes_page = st.Page('pages/naive_bayes.py', title="Naive Bayes")
-theory_text_vectorization = st.Page('pages/text_vectorization.py', title="Text Vectorization")
+text_vectorization = st.Page('pages/text_vectorization.py', title="Text Vectorization")
 smote_page = st.Page("pages/smote.py", title="SMOTE")
 model_page = st.Page("pages/model.py", title="Model")
 metrics_page = st.Page("pages/metrics.py", title="Metrics")
@@ -28,8 +28,8 @@ try_it_yourself_page = st.Page("pages/try_it_yourself.py", title="Try It Yoursel
 # Set up navigation
 pg = st.navigation([main_page, 
     dataset_summary_page, 
+    text_vectorization,
     theory_naive_bayes_page, 
-    theory_text_vectorization,
     smote_page,
     model_page,
     metrics_page,
