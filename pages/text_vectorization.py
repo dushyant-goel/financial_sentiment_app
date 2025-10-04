@@ -110,6 +110,7 @@ with st.spinner("Vectorizing the text..."):
         X, vectorizer = vectorize(docs, method=method)
         top_words = get_topn_words(vectorizer, X[0], 5)
 
+        st.write("Top 5 words in the 1st document:")
         st.write(top_words)
     except:
         st.warning("Please ensure each lines contains a valid document.")
