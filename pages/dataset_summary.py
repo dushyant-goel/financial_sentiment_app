@@ -5,7 +5,7 @@ import pandas as pd
 st.header("📊 Dataset Summary")
 
 st.markdown("""
-The dataset is sourced from [kaggle/ankurzing](https://www.kaggle.com/datasets/ankurzing/sentiment-analysis-for-financial-news) and contains financial news headlines labeled by sentiment.
+The dataset is sourced from [takala/financial_phrase_book](https://huggingface.co/datasets/takala/financial_phrasebank) and contains financial news headlines labeled by sentiment.
 
 Each headline is categorized as:
 - **Positive (1)**
